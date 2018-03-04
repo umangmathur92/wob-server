@@ -6,10 +6,9 @@ src/log/
 .idea/*
 /nbproject/
 /nbproject/private/
-/dist/
-/dist*
 /out
 /src/shared/log/
 *.class
 .tmp
 wob-server.iml
+*.DS_Store

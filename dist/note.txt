@@ -1,0 +1,2 @@
+Each time a change is made to the corresponding server code, the jar file for that particular game/modue should be recompiled.
+If new library dependencies are there, they should be added to the libs folder.
