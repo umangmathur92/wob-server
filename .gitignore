@@ -12,3 +12,4 @@ src/log/
 .tmp
 wob-server.iml
 *.DS_Store
+.metadata
