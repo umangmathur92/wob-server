@@ -9,6 +9,7 @@ public class Configuration {
     public static int cowportNumber = 9260;
     public static int COSPortNumber =  9254;
     public static int RRPortNumber = 9253;
+    public static int DemPortNumber = 9300;
 
     // public static String DBURL = "localhost";
     public static String DBURL = "thecity.sfsu.edu";
