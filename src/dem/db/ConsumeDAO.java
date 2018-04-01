@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import dem.model.Animal;
 import dem.model.Plant;
@@ -12,7 +13,7 @@ import dem.model.Species;
 import shared.util.Log;
 
 /**
- * This retrieves the full set or a subset of the preditor and prey relationships 
+ * This retrieves the full set or a subset of the predator and prey relationships 
  * from the "consume" table of the WoB database.  
  * 
  * @author Cheryl Nielsen
@@ -22,6 +23,44 @@ public class ConsumeDAO
 {
 	
 	public ConsumeDAO() {
+	}
+	
+	
+	/**
+	 * Returns the full list of predator, prey species pairs from the database.
+	 * 
+	 */
+	public static HashMap<Integer, Integer> getPredatorPreyRelationships()
+	{
+		HashMap<Integer, Integer> preyList = new HashMap<Integer, Integer>();
+		
+		String query = "" + "SELECT * FROM `consume` ";
+    	
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;        
+        int predator, prey;
+
+        try {
+            con = GameDB.getConnection();
+            pstmt = con.prepareStatement(query);            
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) 
+            {            	
+            	predator = rs.getInt("species_id");
+            	prey = rs.getInt("prey_id"); 
+            	preyList.put(predator, prey);
+            }
+            
+            
+        } catch (SQLException ex) {
+            Log.println_e(ex.getMessage());
+        } finally {
+            GameDB.closeConnection(con, pstmt, rs);
+        }
+		
+		return preyList;
 	}
 	
 	
