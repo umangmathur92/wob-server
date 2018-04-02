@@ -1,9 +1,9 @@
-package cos.net.request.world;
+package dem.net.request.world;
 
 // Java Imports
 
-import cos.core.world.WorldController;
-import cos.net.request.GameRequest;
+import dem.core.world.WorldController;
+import dem.net.request.GameRequest;
 
 import java.io.DataInputStream;
 import java.io.IOException;

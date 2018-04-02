@@ -1,4 +1,4 @@
-package shared.core;
+package dem.core;
 
 // Other Imports
 import shared.db.PlayerDAO;

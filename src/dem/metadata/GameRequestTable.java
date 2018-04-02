@@ -1,4 +1,4 @@
-package shared.metadata;
+package dem.metadata;
 
 // Java Imports
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package shared.simulation;
+package dem.simulation;
 
 // Java Imports
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package shared.core;
+package dem.core;
 
 // Java Imports
 import shared.util.EventType;
