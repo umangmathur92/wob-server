@@ -1,4 +1,4 @@
-package dem.db;
+package dem.db.foodweb;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,9 +7,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import dem.model.Animal;
-import dem.model.Plant;
-import dem.model.Species;
+import dem.db.GameDB;
+import dem.model.foodweb.Animal;
+import dem.model.foodweb.Plant;
+import dem.model.foodweb.Species;
 import shared.util.Log;
 
 /**
@@ -30,16 +31,18 @@ public class ConsumeDAO
 	 * Returns the full list of predator, prey species pairs from the database.
 	 * 
 	 */
-	public static HashMap<Integer, Integer> getPredatorPreyRelationships()
+	public static ArrayList<int[]> getPredatorPreyRelationships()
 	{
-		HashMap<Integer, Integer> preyList = new HashMap<Integer, Integer>();
+		ArrayList<int[]> preyList = new ArrayList<int[]>();
 		
 		String query = "" + "SELECT * FROM `consume` ";
     	
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;        
-        int predator, prey;
+        int predator = 0;
+        int prey = 1;
+        int[] relation = {0,0};
 
         try {
             con = GameDB.getConnection();
@@ -48,9 +51,9 @@ public class ConsumeDAO
 
             while (rs.next()) 
             {            	
-            	predator = rs.getInt("species_id");
-            	prey = rs.getInt("prey_id"); 
-            	preyList.put(predator, prey);
+            	relation[predator] = rs.getInt("species_id");
+            	relation[prey] = rs.getInt("prey_id");
+            	preyList.add(relation);
             }
             
             
@@ -77,7 +80,7 @@ public class ConsumeDAO
 	
 	
 	/**
-	 * Returns the list of species that are predators (will eat) the given species.
+	 * Returns the list of species that are predators for (will eat) the given species.
 	 * 
 	 */
 	public static ArrayList<Integer> getPredatorList(int species_id) 
@@ -88,7 +91,13 @@ public class ConsumeDAO
     }
 	
 	
-	// private for safety of database, to prevent SQL injection attacks
+	/**
+	 *  private for safety of database, to prevent SQL injection attacks
+	 *  
+	 * @param sqlQuery the database query
+	 * @param getPrey flag for returning prey list if true or predator list if false
+	 * @return the list of species requested
+	 */
 	private static ArrayList<Integer> getListIDs(String sqlQuery, boolean getPrey) 
     {
 		ArrayList<Integer> preyList = new ArrayList<Integer>();

@@ -1,4 +1,4 @@
-package dem.model;
+package dem.model.foodweb;
 
 /**
  * This represents a single animal or plant in the food web.

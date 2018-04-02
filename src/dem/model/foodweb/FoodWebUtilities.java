@@ -1,4 +1,4 @@
-package dem.model;
+package dem.model.foodweb;
 
 public class FoodWebUtilities {
 
