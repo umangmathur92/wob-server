@@ -131,11 +131,40 @@ public class SpeciesDAO
 	}
 	
 	
+	public static ArrayList<Integer> getSpeciesIDList()
+	{
+		ArrayList<Integer> species = new ArrayList<Integer>();
+		int species_id;
+    	String query = "" + "SELECT `species_id` FROM `species`";
+
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try {
+            con = GameDB.getConnection();
+            pstmt = con.prepareStatement(query);
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+            	species_id = rs.getInt("species_id");
+                species.add(species_id);
+            }
+        } catch (SQLException ex) {
+            Log.println_e(ex.getMessage());
+        } finally {
+            GameDB.closeConnection(con, pstmt, rs);
+        }
+
+        return species;
+	}
+	
+	
 	/**
 	 * 
 	 * @return an array list of all the species objects available from the database
 	 */
-	public static ArrayList<Species> getAllSpecies() 
+	public static ArrayList<Species> getListOfSpecies() 
     {
     	ArrayList<Species> species = new ArrayList<Species>();
 

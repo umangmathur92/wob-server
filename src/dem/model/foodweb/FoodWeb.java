@@ -1,129 +1,166 @@
 package dem.model.foodweb;
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Set;
 
-import dem.db.foodweb.ConsumeDAO;
 
 /**
- * This represents the food web of all species as a standard graph by using 
- * Adjacency Lists of nodes for the predators and prey.
- * Each [predator, prey] relation and each [prey, preditor] relation
- * is a directed edge in an adjacency list.
+ * This represents the food web of all species.
+ * It builds a full web, and can then return a partial web.
+ * The web may result in a set of graphs if the set of species included
+ * does not overlap for predator and prey relationships.
  * 
  * @author Cheryl Nielsen
  * for CSC 831 Multiplayer Game Development, San Francisco State University, Spring 2018
  */
-public class FoodWeb {
+public class FoodWeb 
+{
+	private HashMap<Integer, FoodWebNode> foodWeb;
 	
-	// Map of a species id with the list of the preditor ids that eat that species
-	private HashMap<Integer, ArrayList<Integer>> foodWebPredators;
-	// Map of a species id with the list of the prey ids that species will eat
-	private HashMap<Integer, ArrayList<Integer>> foodWebPrey;
-	// List of the 1 to 1 Predator to Prey Relationships from the database.
-	private ArrayList<int[]> predatorPreyRelationships;
-	
-
-	public FoodWeb() 
+	public FoodWeb()
 	{
-		foodWebPredators = new HashMap<Integer, ArrayList<Integer>>();
-		foodWebPrey = new HashMap<Integer, ArrayList<Integer>>();
-		predatorPreyRelationships = new ArrayList<int[]>();
-	}
-
-	
-	public void buildTheWeb()
-	{
-		buildWebAdjacencyLists();
-		buildWebNodes();
+		foodWeb = new HashMap<Integer, FoodWebNode>();
 	}
 	
-	
-	private void buildWebNodes() 
+
+	public void buildFullFoodWeb(FoodWebUtil foodWebUtil)
 	{
-		// TODO Auto-generated method stub
+		ArrayList<Integer> prey = new ArrayList<Integer>();
+		ArrayList<Integer> predators = new ArrayList<Integer>();
 		
-	}
-
-
-	private void buildWebAdjacencyLists() 
-	{
-		int predator = 0;
-		int prey = 1;
-		int key;
-		ArrayList<Integer> value = new ArrayList<Integer>();
+		foodWebUtil.buildWebAdjacencyLists();
+		ArrayList<Integer> predatorSet = foodWebUtil.getListOfAllPredators();
+		ArrayList<Integer> preySet = foodWebUtil.getListOfAllPrey();
 		
-		if (predatorPreyRelationships == null || predatorPreyRelationships.isEmpty())
+		for (int species_id : predatorSet)
 		{
-			predatorPreyRelationships = new ArrayList<int[]>();
-			// Returns the full list of [predator, prey] species pairs from the database.
-			predatorPreyRelationships = ConsumeDAO.getPredatorPreyRelationships();
+			prey = foodWebUtil.getPreyOf(species_id);
+			predators = foodWebUtil.getPredatorsOf(species_id);
+			FoodWebNode node = new FoodWebNode(species_id, prey, predators);
+			foodWeb.put(species_id, node);
 		}
-		
-		for (int[] relation : predatorPreyRelationships)
-		{
-			key = relation[predator];
-			
-			if(foodWebPrey.containsKey(key))
+
+		for (int species_id : preySet)
+		{	
+			// Many of the prey will have already been added from the predator set.
+			if (!foodWeb.containsKey(species_id))
 			{
-				value  = foodWebPrey.get(key); 
-				value.add(relation[prey]);
-				foodWebPrey.put(key, value);
-			}
-			else
-			{
-				value = new ArrayList<Integer>();
-				value.add(relation[prey]);
-				foodWebPrey.put(key, value);
-			}
-			
-			key = relation[prey];
-			
-			if(foodWebPredators.containsKey(key))
-			{
-				value  = foodWebPredators.get(key); 
-				value.add(relation[predator]);
-				foodWebPredators.put(key, value);
-			}
-			else
-			{
-				value = new ArrayList<Integer>();
-				value.add(relation[predator]);
-				foodWebPredators.put(key, value);
+				prey = foodWebUtil.getPreyOf(species_id);
+				predators = foodWebUtil.getPredatorsOf(species_id);
+				FoodWebNode node = new FoodWebNode(species_id, prey, predators);
+				foodWeb.put(species_id, node);
 			}
 		}
-		
 	}
 	
 	
-	public ArrayList<Integer> getPreditorsOf(int species_id)
+	public FoodWeb getPartialFoodWeb(int rootSpecies, int maxTreeDepth, int maxNumSpecies)
 	{
-		ArrayList<Integer> list = null;
-		
-		if (foodWebPredators != null && !foodWebPredators.isEmpty())
-		{
-			list = new ArrayList<Integer>();
-			list = foodWebPredators.get(species_id);
-		}
-		
-		return list;
+		// TODO
+		return null;
 	}
-	
-	
-	public ArrayList<Integer> getPreyOf(int species_id)
-	{
-		ArrayList<Integer> list = null;
-		
-		if (foodWebPrey != null && !foodWebPrey.isEmpty())
-		{
-			list = new ArrayList<Integer>();
-			list = foodWebPrey.get(species_id);
-		}
-		
-		return list;
-	}
-	
 	
 
+	public FoodWeb getPartialFoodWeb(int[] species)
+	{
+		// TODO
+		return null;
+	}
+	
+	
+	public FoodWeb merge(FoodWeb web1, FoodWeb web2)
+	{
+		// TODO
+		return null;
+	}
+	
+	
+	public FoodWeb deletNode(FoodWeb web, int species_id)
+	{
+		// TODO
+		return null;
+	}
+	
+	
+	public FoodWebNode getNode(int species_id)
+	{
+		FoodWebNode node = new FoodWebNode();
+		node = foodWeb.get(species_id);
+		return node;
+	}
+	
+	public void setNode(FoodWebNode node)
+	{
+		int id = node.species_id;
+		foodWeb.put(id, node);
+	}
+	
+	
+	// The set of nodes with no predators.
+	public ArrayList<Integer> getRootNodeIDs()
+	{
+		ArrayList<Integer> roots = new ArrayList<Integer>();
+		FoodWebNode node = new FoodWebNode();
+		
+		for (int species_id : foodWeb.keySet())
+		{
+			node = foodWeb.get(species_id);
+			if (node.getPredatorNodes() == null || node.getPredatorNodes().isEmpty())
+			{
+				roots.add(species_id);
+			}
+		}
+		
+		return roots;
+	}
+	
+	
+	// The set of nodes with no prey.
+	public ArrayList<Integer> getLeafNodeIDs()
+	{
+		ArrayList<Integer> leaves = new ArrayList<Integer>();
+		FoodWebNode node = new FoodWebNode();
+		
+		for (int species_id : foodWeb.keySet())
+		{
+			node = foodWeb.get(species_id);
+			if (node.getPreyNodes() == null || node.getPreyNodes().isEmpty())
+			{
+				leaves.add(species_id);
+			}
+		}
+		
+		return leaves;
+	}
+	
+	
+	// Get the list of prey shared by 2 species.
+	public ArrayList<Integer> getCommonPrey(int species1, int species2)
+	{
+		// TODO
+		return null;
+	}
+	
+	
+	// Get the list of prey shared by 2 species.
+	public ArrayList<Integer> getCommonPredators(int species1, int species2)
+	{
+		// TODO
+		return null;
+	}
+		
+	
+	// Dose a path exist between 2 species on the graph.
+	public boolean isConnected(int species1, int species2)
+	{
+		// TODO
+		return true;
+	}
+	
+	
 }
+
+
+
+

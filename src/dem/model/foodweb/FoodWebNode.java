@@ -10,15 +10,13 @@ import java.util.ArrayList;
  */
 public class FoodWebNode 
 {
-	
-	Species species;
-	// nodeID is the species_id
-	int nodeID;
+	// node ID is the species_id
+	int species_id;
 	// The list of species that this species can eat.
-	// These are the nodeIDs that this node points to. (The child nodes)
+	// These are the nodes that this node points to. (The child nodes)
 	ArrayList<Integer> preyNodes;
 	// The list of species that can eat this species.
-	// These are the nodeIDs that point to this node. (The parent nodes)
+	// These are the nodes that point to this node. (The parent nodes)
 	ArrayList<Integer> predatorNodes;
 	
 	
@@ -27,29 +25,20 @@ public class FoodWebNode
 	}
 
 	
-	public FoodWebNode(Species species, ArrayList<Integer> prey, ArrayList<Integer> predators)
+	public FoodWebNode(int species_id, ArrayList<Integer> prey, ArrayList<Integer> predators)
 	{
-		this.species = species;
-		this.nodeID = species.species_id;
+		this.species_id = species_id;
 		this.preyNodes = prey;
 		this.predatorNodes = predators;
 	}
 	
 	
-	public int getNodeID() {
-		return nodeID;
+	public int getSpecies_id() {
+		return species_id;
 	}
 
-	public void setNodeID(int nodeID) {
-		this.nodeID = nodeID;
-	}
-
-	public Species getSpecies() {
-		return species;
-	}
-
-	public void setSpecies(Species species) {
-		this.species = species;
+	public void setSpecies_id(int species_id) {
+		this.species_id = species_id;
 	}
 
 	public ArrayList<Integer> getPreyNodes() {
