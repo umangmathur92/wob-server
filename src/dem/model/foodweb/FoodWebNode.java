@@ -11,13 +11,13 @@ import java.util.ArrayList;
 public class FoodWebNode 
 {
 	// node ID is the species_id
-	int species_id;
+	private int species_id;
 	// The list of species that this species can eat.
 	// These are the nodes that this node points to. (The child nodes)
-	ArrayList<Integer> preyNodes;
+	private ArrayList<Integer> preyNodes;
 	// The list of species that can eat this species.
 	// These are the nodes that point to this node. (The parent nodes)
-	ArrayList<Integer> predatorNodes;
+	private ArrayList<Integer> predatorNodes;
 	
 	
 	public FoodWebNode() 
