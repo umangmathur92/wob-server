@@ -1,4 +1,4 @@
-package dem.db;
+package shared.db;
 
 // Java Imports
 import java.sql.Connection;

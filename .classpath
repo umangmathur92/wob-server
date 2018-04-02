@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="rr/core/" kind="src" path="src/rr/core/">
+	<classpathentry excluding="rr/model/" kind="src" path="src/rr/model/"/>
+	<classpathentry excluding="test/java/" kind="src" path="src/test/java/"/>
+	<!--
 	<classpathentry excluding="rr/core/|rr/model/|test/java/" kind="src" path="src"/>
+	-->
 	<classpathentry kind="src" path="src/rr/core"/>
 	<classpathentry kind="src" path="src/rr/model"/>
 	<classpathentry kind="src" path="src/test/java"/>

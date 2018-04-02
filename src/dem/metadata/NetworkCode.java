@@ -1,4 +1,4 @@
-package dem.metadata;
+package shared.metadata;
 
 // Java Imports
 import java.lang.reflect.Field;

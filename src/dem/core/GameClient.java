@@ -1,4 +1,4 @@
-package dem.core;
+package shared.core;
 
 // Java Imports
 import java.io.ByteArrayInputStream;

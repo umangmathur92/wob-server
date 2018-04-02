@@ -1,4 +1,4 @@
-package dem.metadata;
+package shared.metadata;
 
 /**
  * The Constants class stores important variables as constants for later use.

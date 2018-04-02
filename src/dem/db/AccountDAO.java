@@ -1,4 +1,4 @@
-package dem.db;
+package shared.db;
 
 // Java Imports
 import java.sql.Connection;
@@ -113,6 +113,8 @@ public final class AccountDAO {
                 account.setPlayTime(rs.getLong("play_time"));
                 account.setActiveTime(rs.getLong("active_time"));
                 account.setLastLogout(rs.getString("last_logout"));
+                account.setGameName(rs.getString("game_name"));
+                account.setInGame(rs.getInt("in_game"));
             }
         } catch (SQLException ex) {
             Log.println_e(ex.getMessage());

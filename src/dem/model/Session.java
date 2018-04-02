@@ -1,4 +1,4 @@
-package dem.model;
+package shared.model;
 
 // Other Imports
 import shared.core.GameClient;
