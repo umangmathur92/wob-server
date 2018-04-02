@@ -28,7 +28,7 @@ public class ConsumeDAO
 	
 	
 	/**
-	 * Returns the full list of predator, prey species pairs from the database.
+	 * Returns the full list of [predator, prey] species pairs from the database.
 	 * 
 	 */
 	public static ArrayList<int[]> getPredatorPreyRelationships()
