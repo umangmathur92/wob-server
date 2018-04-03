@@ -1,4 +1,4 @@
-package shared.model;
+package dem.model;
 
 public class Stat {
 

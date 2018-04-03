@@ -1,11 +1,11 @@
-package shared.model;
+package dem.model;
 
 // Java Imports
 import java.sql.SQLException;
 
 
 // Other Imports
-import shared.db.TileDAO;
+import dem.db.TileDAO;
 
 /**
  * The Tile model class on the server side which represents a tile object

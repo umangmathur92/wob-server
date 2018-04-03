@@ -1,7 +1,7 @@
-package shared.model;
+package dem.model;
 
 // Other Imports
-import shared.core.GameClient;
+import dem.core.GameClient;
 
 /**
  *

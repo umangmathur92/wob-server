@@ -1,15 +1,14 @@
-package shared.model;
+package dem.model;
 
 // Java Imports
-import shared.core.ServerResources;
+import dem.core.ServerResources;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 // Other Imports
-import shared.db.SpeciesDAO;
-import shared.simulation.simjob.SimTestNode;
+import dem.db.SpeciesDAO;
 
 /**
  * The SpeciesType class is an abstract class that is used to represent a single
@@ -273,68 +272,6 @@ public class SpeciesType {
         return typeList;
     }
 
-    /**
-     * setter for simTestNodeParams.
-     *
-     * @param simTestNodeParams
-     */
-    public void setSimTestNodeParams(Map<Integer, SimTestNode> simTestNodeParams) {
-        this.simTestNodeParams = simTestNodeParams;
-    }
-
-    /**
-     * getter for simTestNodeParams.
-     *
-     * @return
-     */
-    public Map<Integer, SimTestNode> getSimTestNodeParams() {
-        return simTestNodeParams;
-    }
-
-    /**
-     * getter for simTestNodeParams value for single species.
-     *
-     * @param nodeId
-     * @return
-     */
-    public SimTestNode getSimTestNode(int nodeId) {
-        return simTestNodeParams.get(nodeId);
-    }
-
-    /**
-     * Load sim test node parameters from database.  JTC 4/2014
-     * 9/13/14 - JTC - added param eco_type.
-     */
-    public static void loadSimTestNodeParams(int eco_type) {
-        SpeciesDAO.loadSimTestNodeParams(eco_type);
-    }
-
-    /**
-     * setter for simTestLinkParams.  JTC 4/2014
-     *
-     * @param simTestLinkParams
-     */
-    public void setSimTestLinkParams(Map<Integer, Consume> simTestLinkParams) {
-        this.simTestLinkParams = simTestLinkParams;
-    }
-
-    /**
-     * getter for simTestLinkParams for individual species.  JTC 4/2014
-     *
-     * @param speciesId
-     * @return Consume
-     */
-    public Consume getSimTestLinks(int speciesId) {
-        return simTestLinkParams.get(speciesId);
-    }
-
-    /**
-     * Load simtest_nod_params table from database into simTestLinkParams.
-     * 9/13/14 - JTC - added param eco_type.
-     */
-    public static void loadSimTestLinkParams(int eco_type) {
-        SpeciesDAO.loadSimTestLinkParams(eco_type);
-    }
 
     /**
      * Load list of species IDs from database; static call - data is not stored

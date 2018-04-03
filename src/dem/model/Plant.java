@@ -1,7 +1,7 @@
 package shared.model;
 
 // Other Imports
-import shared.metadata.Constants;
+import dem.metadata.Constants;
 
 public class Plant extends Organism {
 

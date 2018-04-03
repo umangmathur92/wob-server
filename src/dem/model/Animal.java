@@ -1,7 +1,7 @@
-package shared.model;
+package dem.model;
 
 // Other Imports
-import shared.metadata.Constants;
+import dem.metadata.Constants;
 
 public class Animal extends Organism {
 
@@ -10,7 +10,6 @@ public class Animal extends Organism {
     public Animal(int animal_id) {
         organism_type = Constants.ORGANISM_TYPE_ANIMAL;
         organism_id = animal_id;
-
         hungerLevel = 0.0f;
     }
 

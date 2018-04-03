@@ -11,7 +11,7 @@ import dem.db.GameDB;
 import dem.model.foodweb.Animal;
 import dem.model.foodweb.Plant;
 import dem.model.foodweb.Species;
-import shared.util.Log;
+import dem.util.Log;
 
 /**
  * This retrieves the full set or a subset of the predator and prey relationships 

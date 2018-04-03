@@ -1,6 +1,6 @@
-package shared.model;
+package dem.model;
 
-import shared.metadata.Constants;
+import dem.metadata.Constants;
 
 public class AnimalType extends SpeciesType {
 

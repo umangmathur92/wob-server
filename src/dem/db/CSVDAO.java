@@ -1,4 +1,4 @@
-package shared.db;
+package dem.db;
 
 // Java Imports
 import java.sql.Connection;
@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 // Other Imports
-import shared.util.Log;
+import dem.util.Log;
 
 /**
  * Table(s) Required: csv_biomass, csv_score, csv_user_actions

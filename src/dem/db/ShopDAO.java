@@ -10,11 +10,11 @@ import java.util.Arrays;
 import java.util.List;
 
 // Other Imports
-import shared.core.ServerResources;
-import shared.metadata.Constants;
-import shared.model.ShopItem;
-import shared.model.SpeciesType;
-import shared.util.Log;
+import dem.core.ServerResources;
+import dem.metadata.Constants;
+import dem.model.ShopItem;
+import dem.model.SpeciesType;
+import dem.util.Log;
 
 /**
  * Table(s) Required: shop

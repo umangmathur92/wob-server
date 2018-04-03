@@ -1,8 +1,8 @@
-package shared.model;
+package dem.model;
 
-import shared.core.GameServer;
-import shared.metadata.Constants;
-import shared.model.SpeciesType;
+import dem.core.GameServer;
+import dem.metadata.Constants;
+import dem.model.SpeciesType;
 
 public abstract class Organism {
 

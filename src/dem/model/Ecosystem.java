@@ -1,4 +1,4 @@
-package shared.model;
+package dem.model;
 
 // Java Imports
 import java.sql.SQLException;
@@ -6,14 +6,14 @@ import java.sql.Timestamp;
 import java.util.*;
 
 // Other Imports
-import shared.core.GameEngine;
-import shared.db.*;
-import shared.metadata.Constants;
+import dem.core.GameEngine;
+import dem.db.*;
+import dem.metadata.Constants;
 import lby.net.response.ResponseUpdateEnvironmentScore;
-import shared.simulation.SpeciesZoneType;
+import dem.simulation.SpeciesZoneType;
 
-import static shared.util.Functions.log2;
-import shared.util.NetworkFunctions;
+import static dem.util.Functions.log2;
+import dem.util.NetworkFunctions;
 
 /**
  * The Ecosystem class is used to store information about a specific section of

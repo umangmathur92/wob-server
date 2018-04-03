@@ -1,4 +1,4 @@
-package shared.db;
+package dem.db;
 
 // Java Imports
 import java.sql.Connection;
@@ -8,9 +8,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 // Other Imports
-import shared.model.Account;
-import shared.util.Functions;
-import shared.util.Log;
+import dem.model.Account;
+import dem.util.Functions;
+import dem.util.Log;
 
 /**
  * Table(s) Required: account

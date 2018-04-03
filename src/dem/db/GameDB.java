@@ -1,4 +1,4 @@
-package shared.db;
+package dem.db;
 
 // Java Imports
 import java.sql.Connection;
@@ -9,7 +9,7 @@ import javax.sql.DataSource;
 
 // Other Imports
 import conf.Configuration;
-import shared.util.Log;
+import dem.util.Log;
 
 /**
  * The GameDB class configures the database connection by using information

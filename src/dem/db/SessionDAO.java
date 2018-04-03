@@ -8,8 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 // Other Imports
-import shared.model.Session;
-import shared.util.Log;
+import dem.model.Session;
+import dem.util.Log;
 
 
 /**

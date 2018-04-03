@@ -1,4 +1,4 @@
-package shared.db;
+package dem.db;
 
 // Java Imports
 import java.sql.Connection;
@@ -8,9 +8,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 // Other Imports
-import shared.model.Player;
-import shared.util.Color;
-import shared.util.Log;
+import dem.model.Player;
+import dem.util.Color;
+import dem.util.Log;
 
 /**
  * Table(s) Required: player

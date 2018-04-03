@@ -1,6 +1,6 @@
-package shared.model;
+package dem.model;
 
-import shared.core.GameClient;
+import dem.core.GameClient;
 
 /**
  * The Account class holds important information about the player including, most

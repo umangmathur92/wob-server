@@ -1,7 +1,7 @@
-package shared.model;
+package dem.model;
 
 // Other Imports
-import shared.metadata.Constants;
+import dem.metadata.Constants;
 
 /**
  * The PlantType class extends the SpeciesType class as well as including

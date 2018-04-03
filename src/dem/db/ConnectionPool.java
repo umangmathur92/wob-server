@@ -1,4 +1,4 @@
-package shared.db;
+package dem.db;
 
 // Java Imports
 import javax.sql.DataSource;

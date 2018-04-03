@@ -1,10 +1,10 @@
-package shared.model;
+package dem.model;
 
 // Other Imports
-import shared.core.GameClient;
+import dem.core.GameClient;
 import lby.core.Lobby;
 import lby.core.world.World;
-import shared.util.Color;
+import dem.util.Color;
 
 public class Player {
 
