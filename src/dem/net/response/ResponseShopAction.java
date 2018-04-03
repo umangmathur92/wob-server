@@ -1,9 +1,9 @@
-package cos.net.response.shop;
+package dem.net.response.shop;
 
 // Other Imports
-import cos.metadata.NetworkCode;
-import cos.net.response.GameResponse;
-import cos.util.GamePacket;
+import dem.metadata.NetworkCode;
+import dem.net.response.GameResponse;
+import dem.util.GamePacket;
 
 public class ResponseShopAction extends GameResponse {
 

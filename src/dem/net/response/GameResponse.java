@@ -1,4 +1,4 @@
-package cos.net.response;
+package dem.net.response;
 
 /**
  * The GameResponse class is an abstract class used as a basis for storing

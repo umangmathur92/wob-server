@@ -1,7 +1,7 @@
-package cos.net.response;
+package dem.net.response;
 
-import cos.metadata.NetworkCode;
-import cos.util.GamePacket;
+import dem.metadata.NetworkCode;
+import dem.util.GamePacket;
 
 /**
  *

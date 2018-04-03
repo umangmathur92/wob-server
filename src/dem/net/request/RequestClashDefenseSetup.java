@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cos.net.request;
+package dem.net.request;
 
-import cos.db.DefenseConfigDAO;
-import cos.model.DefenseConfig;
-import cos.net.response.ResponseClashDefenseSetup;
-import cos.util.DataReader;
-import cos.util.Vector2;
+import dem.db.DefenseConfigDAO;
+import dem.model.DefenseConfig;
+import dem.net.response.ResponseClashDefenseSetup;
+import dem.util.DataReader;
+import dem.util.Vector2;
 
 import java.io.DataInputStream;
 import java.io.IOException;

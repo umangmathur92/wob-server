@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cos.net.request;
+package dem.net.request;
 
-import cos.db.ClashPlayerDAO;
-import cos.model.Player;
-import cos.net.response.ResponseClashPlayerList;
+import dem.db.ClashPlayerDAO;
+import dem.model.Player;
+import dem.net.response.ResponseClashPlayerList;
 
 import java.io.DataInputStream;
 import java.io.IOException;

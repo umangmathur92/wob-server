@@ -1,15 +1,15 @@
-package cos.net.request;
+package dem.net.request;
 
 // Java Imports
 
-import cos.core.GameServer;
-import cos.db.AccountDAO;
-import cos.db.PlayerDAO;
-import cos.model.Account;
-import cos.model.Player;
-import cos.net.response.ResponseLogin;
-import cos.util.DataReader;
-import cos.util.Log;
+import dem.core.GameServer;
+import dem.db.AccountDAO;
+import dem.db.PlayerDAO;
+import dem.model.Account;
+import dem.model.Player;
+import dem.net.response.ResponseLogin;
+import dem.util.DataReader;
+import dem.util.Log;
 
 import java.io.DataInputStream;
 import java.io.IOException;

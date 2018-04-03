@@ -1,11 +1,11 @@
-package cos.net.request;
+package dem.net.request;
 
 // Java Imports
 
-import cos.db.LogDAO;
-import cos.net.response.ResponseMessage;
-import cos.util.DataReader;
-import cos.util.NetworkFunctions;
+import dem.db.LogDAO;
+import dem.net.response.ResponseMessage;
+import dem.util.DataReader;
+import dem.util.NetworkFunctions;
 
 import java.io.DataInputStream;
 import java.io.IOException;

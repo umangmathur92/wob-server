@@ -1,11 +1,11 @@
-package cos.net.request.shop;
+package dem.net.request.shop;
 
 // Java Imports
 
-import cos.core.world.World;
-import cos.net.request.GameRequest;
-import cos.net.response.shop.ResponseShopAction;
-import cos.util.DataReader;
+import dem.core.world.World;
+import dem.net.request.GameRequest;
+import dem.net.response.shop.ResponseShopAction;
+import dem.util.DataReader;
 
 import java.io.DataInputStream;
 import java.io.IOException;

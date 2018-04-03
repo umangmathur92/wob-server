@@ -1,10 +1,10 @@
-package cos.net.request;
+package dem.net.request;
 
 // Java Imports
 
-import cos.metadata.Constants;
-import cos.net.response.ResponseClient;
-import cos.util.DataReader;
+import dem.metadata.Constants;
+import dem.net.response.ResponseClient;
+import dem.util.DataReader;
 
 import java.io.DataInputStream;
 import java.io.IOException;

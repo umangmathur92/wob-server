@@ -1,9 +1,9 @@
-package cos.net.request;
+package dem.net.request;
 
 // Java Imports
 
-import cos.core.GameClient;
-import cos.util.Log;
+import dem.core.GameClient;
+import dem.util.Log;
 
 import java.io.DataInputStream;
 import java.io.IOException;

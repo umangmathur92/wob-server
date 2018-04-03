@@ -1,10 +1,10 @@
-package cos.net.request;
+package dem.net.request;
 
 // Java Imports
 
-import cos.net.response.ResponseLogout;
-import cos.util.DataReader;
-import cos.util.Log;
+import dem.net.response.ResponseLogout;
+import dem.util.DataReader;
+import dem.util.Log;
 
 import java.io.DataInputStream;
 import java.io.IOException;

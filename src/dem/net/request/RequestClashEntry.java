@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cos.net.request;
+package RequestClashEntry.java.net.request;
 
-import cos.db.DefenseConfigDAO;
-import cos.model.DefenseConfig;
-import cos.net.response.ResponseClashEntry;
-import cos.util.Vector2;
+import RequestClashEntry.java.db.DefenseConfigDAO;
+import RequestClashEntry.java.model.DefenseConfig;
+import RequestClashEntry.java.net.response.ResponseClashEntry;
+import RequestClashEntry.java.util.Vector2;
 
 import java.io.DataInputStream;
 import java.io.IOException;

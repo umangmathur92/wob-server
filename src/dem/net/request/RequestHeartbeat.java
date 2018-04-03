@@ -1,9 +1,9 @@
-package cos.net.request;
+package dem.net.request;
 
 // Java Imports
 
-import cos.core.GameEngine;
-import cos.core.lobby.EcosystemLobby;
+import dem.core.GameEngine;
+import dem.core.lobby.EcosystemLobby;
 
 import java.io.DataInputStream;
 import java.io.IOException;

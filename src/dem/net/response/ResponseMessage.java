@@ -1,8 +1,8 @@
-package cos.net.response;
+package dem.net.response;
 
 // Other Imports
-import cos.metadata.NetworkCode;
-import cos.util.GamePacket;
+import dem.metadata.NetworkCode;
+import dem.util.GamePacket;
 
 /**
  * The ResponseMessage class is used to sent chat messages to the client.

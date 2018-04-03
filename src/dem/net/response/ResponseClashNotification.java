@@ -1,8 +1,8 @@
-package cos.net.response;
+package dem.net.response;
 
-import cos.metadata.NetworkCode;
-import cos.model.MatchRecord;
-import cos.util.GamePacket;
+import dem.metadata.NetworkCode;
+import dem.model.MatchRecord;
+import dem.util.GamePacket;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

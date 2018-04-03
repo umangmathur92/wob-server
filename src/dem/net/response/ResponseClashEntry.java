@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cos.net.response;
+package dem.net.response;
 
-import cos.metadata.NetworkCode;
-import cos.util.GamePacket;
-import cos.util.Vector2;
+import dem.metadata.NetworkCode;
+import dem.util.GamePacket;
+import dem.util.Vector2;
 
 import java.util.HashMap;
 import java.util.List;

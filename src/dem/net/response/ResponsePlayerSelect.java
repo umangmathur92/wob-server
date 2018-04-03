@@ -1,9 +1,9 @@
-package cos.net.response;
+package dem.net.response;
 
 // Other Imports
-import cos.metadata.NetworkCode;
-import cos.model.Player;
-import cos.util.GamePacket;
+import dem.metadata.NetworkCode;
+import dem.model.Player;
+import dem.util.GamePacket;
 
 public class ResponsePlayerSelect extends GameResponse {
 

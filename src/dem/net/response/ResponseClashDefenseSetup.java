@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cos.net.response;
+package dem.net.response;
 
-import cos.metadata.NetworkCode;
-import cos.util.GamePacket;
+import dem.metadata.NetworkCode;
+import dem.util.GamePacket;
 
 /**
  * Sent back after the user has sent a defense configuration for the

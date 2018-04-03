@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cos.net.request;
+package dem.net.request;
 
-import cos.db.SpeciesDAO;
-import cos.net.response.ResponseClashSpeciesList;
+import dem.db.SpeciesDAO;
+import dem.net.response.ResponseClashSpeciesList;
 
 import java.io.DataInputStream;
 import java.io.IOException;

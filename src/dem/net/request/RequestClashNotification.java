@@ -1,8 +1,8 @@
-package cos.net.request;
+package dem.net.request;
 
-import cos.db.MatchRecordDAO;
-import cos.model.MatchRecord;
-import cos.net.response.ResponseClashNotification;
+import dem.db.MatchRecordDAO;
+import dem.model.MatchRecord;
+import dem.net.response.ResponseClashNotification;
 
 import java.io.DataInputStream;
 import java.io.IOException;
