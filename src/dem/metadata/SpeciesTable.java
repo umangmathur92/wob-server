@@ -8,13 +8,13 @@ import java.util.List;
 import java.util.Map;
 
 // Other Imports
-import shared.db.SpeciesDAO;
-import shared.model.AnimalType;
-import shared.model.PlantType;
-import shared.model.SpeciesType;
-import shared.util.Comparators;
-import shared.util.ConfigureException;
-import shared.util.Log;
+import dem.db.SpeciesDAO;
+import dem.model.AnimalType;
+import dem.model.PlantType;
+import dem.model.SpeciesType;
+import dem.util.Comparators;
+import dem.util.ConfigureException;
+import dem.util.Log;
 
 public class SpeciesTable {
 

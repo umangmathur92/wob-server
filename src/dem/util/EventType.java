@@ -1,4 +1,4 @@
-package shared.util;
+package dem.util;
 
 public enum EventType {
 
@@ -7,7 +7,5 @@ public enum EventType {
     SPECIES_BOUGHT,
     UNIQUE_SPECIES_BOUGHT,
     BIOMASS_BOUGHT,
-    NEW_DAY,
-    NEW_MONTH,
-    NEW_YEAR;
+
 }

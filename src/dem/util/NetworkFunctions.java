@@ -1,4 +1,4 @@
-package shared.util;
+package dem.util;
 
 // Java Imports
 import java.util.ArrayList;
@@ -6,13 +6,13 @@ import java.util.Arrays;
 import java.util.List;
 
 // Other Imports
-import shared.core.GameServer;
+import dem.core.GameServer;
 import lby.core.Lobby;
 import lby.core.LobbyController;
 import lby.core.world.World;
 import lby.core.world.WorldController;
-import shared.model.Account;
-import shared.model.Player;
+import dem.model.Account;
+import dem.model.Player;
 import lby.net.response.GameResponse;
 
 public class NetworkFunctions {

@@ -1,12 +1,12 @@
-package shared.util;
+package dem.util;
 
 // Java Imports
 import java.util.HashMap;
 import java.util.Map;
 
 // Other Imports
-import shared.core.ServerResources;
-import shared.model.SpeciesType;
+import dem.core.ServerResources;
+import dem.model.SpeciesType;
 
 /**
  *

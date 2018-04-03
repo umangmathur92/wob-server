@@ -1,11 +1,11 @@
 package dem.core;
 
 // Java Imports
-import shared.util.EventType;
-import shared.util.EventHandler;
-import shared.util.EventListener;
+import dem.util.EventType;
+import dem.util.EventHandler;
+import dem.util.EventListener;
 import lby.core.Lobby;
-import shared.util.NetworkFunctions;
+import dem.util.NetworkFunctions;
 
 import java.util.ArrayList;
 import java.util.HashMap;

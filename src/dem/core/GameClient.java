@@ -15,26 +15,26 @@ import java.util.TimerTask;
 
 // Other Imports
 import lby.core.world.WorldController;
-import shared.db.AccountDAO;
-import shared.db.PlayerDAO;
-import shared.db.UserLogDAO;
+import dem.db.AccountDAO;
+import dem.db.PlayerDAO;
+import dem.db.UserLogDAO;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import lby.GameRoomManager;
-import shared.metadata.Constants;
-import shared.metadata.GameRequestTable;
-import shared.model.Account;
-import shared.model.Player;
+import dem.metadata.Constants;
+import dem.metadata.GameRequestTable;
+import dem.model.Account;
+import dem.model.Player;
 import lby.net.request.GameRequest;
 import lby.net.response.GameResponse;
 import lby.net.response.ResponseHeartbeat;
 import lby.net.response.ResponseLogout;
 import lby.net.response.ResponsePlayerSelect;
-import shared.util.DataReader;
-import shared.util.GameTimer;
-import shared.util.Log;
-import shared.util.NetworkFunctions;
-import shared.model.Ecosystem;
+import dem.util.DataReader;
+import dem.util.GameTimer;
+import dem.util.Log;
+import dem.util.NetworkFunctions;
+import dem.model.Ecosystem;
 
 /**
  * The GameClient class is an extension of the Thread class that represents an

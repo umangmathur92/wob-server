@@ -1,8 +1,8 @@
 package dem.core;
 
 // Java Imports
-import shared.util.EventType;
-import shared.util.EventListener;
+import dem.util.EventType;
+import dem.util.EventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;

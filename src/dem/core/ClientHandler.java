@@ -10,8 +10,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 // Other Imports
-import shared.metadata.Constants;
-import shared.util.Log;
+import dem.metadata.Constants;
+import dem.util.Log;
 
 public class ClientHandler implements Runnable {
 

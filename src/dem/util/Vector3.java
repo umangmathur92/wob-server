@@ -1,4 +1,4 @@
-package shared.util;
+package dem.util;
 
 public class Vector3<T> {
 

@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 // Other Imports
-import shared.util.Log;
+import dem.util.Log;
 
 public class NetworkCode {
 
@@ -72,14 +72,6 @@ public class NetworkCode {
     
     public final static short SPECIES_INFO = 190;
 
-    public final static short CONVERGE_ECOSYSTEMS = 146;
-    public final static short CONVERGE_NEW_ATTEMPT = 147;
-    public final static short CONVERGE_PRIOR_ATTEMPT = 148;
-    public final static short CONVERGE_PRIOR_ATTEMPT_COUNT = 149;
-    public final static short CONVERGE_HINT = 150;
-    public final static short CONVERGE_HINT_COUNT = 151;
-    public final static short CONVERGE_NEW_ATTEMPT_SCORE = 152;
-
     public final static short TOPLIST = 153;    
     public final static short WAITFORGAME = 154;
     public final static short NOWAITFORGAME = 155;
@@ -132,21 +124,6 @@ public class NetworkCode {
     public final static short RETURN_LOBBY = 213;
     public final static short APPLY_FOOD = 214;
 
-  // Sea Divided
-    public final static short SD_GAME_LOGIN = 400;
-    public final static short SD_PLAY_INIT = 401;
-    public final static short SD_START_GAME = 402;
-    public final static short SD_END_GAME = 403;
-    public final static short SD_KEYBOARD = 404;
-    public final static short SD_PLAYER_POSITION = 405;
-    public final static short SD_PREY = 406;
-    public final static short SD_EAT_PREY = 407;
-    public final static short SD_SCORE = 408;
-    public final static short SD_DISCONNECT = 409;
-    public final static short SD_RECONNECT = 410;
-    public final static short SD_HEARTBEAT = 411;
-    public final static short SD_NPCPOSITION = 412;
-    public final static short SD_RESPAWN = 413;
 
     /**
      * Check for duplicate values, if any.

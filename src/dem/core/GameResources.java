@@ -1,13 +1,13 @@
 package dem.core;
 
 // Other Imports
-import shared.db.PlayerDAO;
-import shared.metadata.Constants;
-import shared.model.Player;
+import dem.db.PlayerDAO;
+import dem.metadata.Constants;
+import dem.model.Player;
 import lby.net.response.ResponseUpdateLevel;
 import lby.net.response.ResponseUpdateResources;
-import shared.util.ExpTable;
-import shared.util.NetworkFunctions;
+import dem.util.ExpTable;
+import dem.util.NetworkFunctions;
 
 public class GameResources {
 

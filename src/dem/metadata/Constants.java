@@ -68,13 +68,7 @@ public class Constants {
     public final static String CLIENT_VERSION = "1.00";
     //public final static int TIMEOUT_MILLISECONDS = 900000000;  //90000; - jtc, using breakpoints, need more time
     public final static int TIMEOUT_MILLISECONDS = 180000;
-    public final static int DAY_DURATION = 6;
-    public final static int MONTH_DURATION = 180;
     public final static int MAX_SPECIES_SIZE = 10;
-    public final static String CSV_SAVE_PATH = "src/shared/log/sim/";
-    public final static String ATN_CSV_SAVE_PATH = "src/shared/log/atn/";
-    public final static String ATN_GENERATED_CSV_SAVE_PATH = "src/shared/log/atn/generated_atn/";
-    public final static String ATN_ACCEPTED_CSV_SAVE_PATH = "src/shared/log/atn/accepted_atn_files/";
     public final static int MAX_CLIENT_THREADS = 10;
     public final static int ECOSYSTEM_TYPE = 1;
     public final static int TICK_RATE = 30;
@@ -87,11 +81,6 @@ public class Constants {
     //Natural Environment Constants
     public static final int NATURE_EVENT_CHANCE = 40; //40% chance every month
     public static final int TOTAL_GAME_TILES = 1681;
-    public static final int NATURE_EVENT_TILES_AMNT = 250; //2500 out of 16807 tiles get affected, need to be multiple of 100 or division will have problems
-    public static final int NATURE_EVENT_DAY_LENGTH = 5; //5 secs
-    public static final int NATURE_EVENT_MONTH_LENGTH = NATURE_EVENT_DAY_LENGTH * 30; //EVERY month is 30 days
-    public static final int NATURE_EVENT_SEASON_LENGTH = NATURE_EVENT_MONTH_LENGTH * 3; //season is 3 months
-    public static final int NATURE_EVENT_YEAR_LENGTH = NATURE_EVENT_SEASON_LENGTH * 4; //year is 4 seasons
     public static final int NATURE_EVENT_DURATION = 120; // 2min
     
     // Battle
@@ -145,38 +134,3 @@ public class Constants {
     public static final int STATUS_SUCCESS = 0;
     public static final int STATUS_FAILURE = 1;
     
-    public static final double INIT_BSI_STEPSIZE = 0.1;
-    public static final double MAX_BSI_ERR = 0.5;
-    public static final int ADDITIONAL_TIMESTEPS = 2;	//Needed so that it aligns with Simulationengine, otherwise client will be in processing state
-	public static boolean useSimEngine = false;		//To run both the simulation engine and the atn engine set useSimEngine =true && useAtnEngine == true
-	public static boolean useAtnEngine = true;
-
-    // Set to true to run simulations using GraggBulirschStoerIntegrator from Apache Commons Math
-    // Set to false to run simulations using BulirschStoerIntegration instead
-    public static boolean useCommonsMathIntegrator = true;
-
-	public static final boolean DEBUG_MODE = false;
-
-    // DH change
-    // Multiplayer Convergence
-    public static boolean SINGLE_PLAYER = false;
-    //for use in Cards of the Wild and Convergence
-    //public static final boolean SINGLE_PLAYER = true;
-    public static final short  STATUS_NO_MATCH = 2;
-    
-    public static final short STATUS_SUCCESS_CARDS = 0;
-    public static final short STATUS_FAILURE_CARDS = 1;
-    
-    
-    // for SeaDivided
-    public static final int TIMEOUT_SECONDS = 90;
-    public static final short MAX_NUMBER_OF_PLAYERS = 2;
-    public static final int NUM_PREY = 40;
-    public static final int X_MIN = -120;
-    public static final int X_MAX = 120;
-    public static final int Y_MIN = -75;
-    public static final int Y_MAX = 75;
-    public static final int MIN_PREY = 20;
-    public static final int CREDIT_REWARD = 50;
-    
-}

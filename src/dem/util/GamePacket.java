@@ -1,4 +1,4 @@
-package shared.util;
+package dem.util;
 
 /**
  * GamePacket sent by the server.

@@ -13,7 +13,7 @@ import lby.net.request.world.RequestWorld;
 import lby.net.request.world.RequestZone;
 import lby.net.request.world.RequestZoneList;
 import lby.net.request.world.RequestZoneUpdate;
-import shared.util.Log;
+import dem.util.Log;
 import lby.net.request.*;
 import cvg.net.request.*;
 

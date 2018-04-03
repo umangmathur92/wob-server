@@ -1,4 +1,4 @@
-package shared.util;
+package dem.util;
 
 // Java Imports
 import java.util.ArrayList;

@@ -1,9 +1,9 @@
 package dem.core;
 
 // Other Imports
-import shared.metadata.SpeciesTable;
-import shared.util.ConfigureException;
-import shared.util.Log;
+import dem.metadata.SpeciesTable;
+import dem.util.ConfigureException;
+import dem.util.Log;
 
 public class ServerResources {
 

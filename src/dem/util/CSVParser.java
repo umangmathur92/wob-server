@@ -1,4 +1,4 @@
-package shared.util;
+package dem.util;
 
 // Java Imports
 import java.util.ArrayList;
@@ -6,8 +6,8 @@ import java.util.Arrays;
 import java.util.List;
 
 // Other Imports
-import shared.core.ServerResources;
-import shared.model.SpeciesType;
+import dem.core.ServerResources;
+import dem.model.SpeciesType;
 
 /**
  * The CSVParser class contain methods used to process and format any given
