@@ -1,50 +1,21 @@
 package dem.core;
 
 // Java Imports
-import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
 
-// Other Imports
 import conf.Configuration;
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import jdk.nashorn.internal.runtime.regexp.joni.Config;
-import lby.core.badge.BadgeController;
-import lby.core.world.WorldController;
-import java.nio.file.Paths;
-import java.text.DateFormat;
-import java.text.Format;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Properties;
-import java.util.TimerTask;
-import lby.MiniGameServers;
-import dem.db.PlayerDAO;
-import dem.db.EcosystemDAO;
-import dem.db.SpeciesChangeListDAO;
 import dem.metadata.Constants;
 import dem.metadata.GameRequestTable;
 import dem.model.Account;
-import dem.model.Ecosystem;
 import dem.model.Player;
-import dem.util.ConfFileParser;
 import dem.util.ConfigureException;
 import dem.util.ExpTable;
-import dem.util.GameTimer;
 import dem.util.Log;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.*;
+
+// Other Imports
 
 /**
  * The GameServer class serves as the main module that runs the server. Incoming
@@ -67,21 +38,7 @@ public class GameServer {
     private final Map<Integer, Account> activeAccounts = new HashMap<Integer, Account>(); // Account ID -> Account
     private final Map<Integer, Player> activePlayers = new HashMap<Integer, Player>(); // Player ID -> Player
     // Other
-    private boolean isActive = true; // Server Loop Flag    
-    private int mCount;
-    private final GameTimer ecoUpdateTimer = new GameTimer();
-    private static int world_id;
-
-    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-    /* This is the path name in the server. Must be updated if a new server path is used  */
-    public final static String SERVER_PATH = "/project/wob_server";
-    /* This is food web image block size to send to client. 
-     * Must match value in client, WorldController class
-     * Must be under 32K limit
-     */
-    public final static int FOOD_WEB_BLOCK_SIZE = 32000;
-    
-    
+    private boolean isActive = true; // Server Loop Flag
 
     /**
      * Create the GameServer by setting up the request types and creating a
@@ -123,7 +80,6 @@ public class GameServer {
      */
     private void run() {
         Log.consoleln("Now accepting connections...");
-        
         
         // Loop indefinitely to establish multiple connections
         while (isActive) {
@@ -235,7 +191,6 @@ public class GameServer {
     public boolean hasPlayer(int player_id) {
         return activePlayers.containsKey(player_id);
     }
-    
 
     /**
      * Initiates the Game Server by configuring and running it. Restarts
@@ -244,18 +199,14 @@ public class GameServer {
      * @param args contains additional launching parameters
      */
     public static void main(String[] args) {
-        Log.printf("World of Balance Lobby Server is starting on port: %d", Configuration.lobbyPortNumber);
+        Log.printf("Don't Eat Me Server v%s is starting...", Constants.CLIENT_VERSION);
         try {
-            server = new GameServer(Configuration.lobbyPortNumber, Constants.MAX_CLIENT_THREADS);
-            server.configure();            
-            Log.println("WoB current day is " + SpeciesChangeListDAO.fetchDay());
-            MiniGameServers.getInstance().runServers();
-            world_id = WorldController.getInstance().first().getID();
-            server.startEcosystemUpdate();
-            Log.println("Start Ecosystem periodic update");            
+            //server = new GameServer(16567, Constants.MAX_CLIENT_THREADS);
+            server = new GameServer(Configuration.COSPortNumber, Constants.MAX_CLIENT_THREADS);
+            server.configure();
             server.run();
         } catch (IOException ex) {
-            Log.printf_e("Failed to start server. Port %d is already in use", Configuration.lobbyPortNumber);
+            Log.printf_e("Port %d is in use", Configuration.d);
         } catch (ConfigureException ex) {
             Log.printf_e(ex.getMessage());
         } catch (Exception ex) {
@@ -264,5 +215,5 @@ public class GameServer {
         }
 
         System.exit(0);
-    }    
+    }
 }
