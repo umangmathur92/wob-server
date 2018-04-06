@@ -1,50 +1,34 @@
 package shared.core;
 
 // Java Imports
-import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
-
-// Other Imports
 import conf.Configuration;
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import jdk.nashorn.internal.runtime.regexp.joni.Config;
+import lby.MiniGameServers;
 import lby.core.badge.BadgeController;
 import lby.core.world.WorldController;
-import java.nio.file.Paths;
-import java.text.DateFormat;
-import java.text.Format;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Properties;
-import java.util.TimerTask;
-import lby.MiniGameServers;
-import shared.db.PlayerDAO;
 import shared.db.EcosystemDAO;
+import shared.db.PlayerDAO;
 import shared.db.SpeciesChangeListDAO;
 import shared.metadata.Constants;
 import shared.metadata.GameRequestTable;
 import shared.model.Account;
 import shared.model.Ecosystem;
 import shared.model.Player;
-import shared.util.ConfFileParser;
 import shared.util.ConfigureException;
 import shared.util.ExpTable;
 import shared.util.GameTimer;
 import shared.util.Log;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
+
+// Other Imports
 
 /**
  * The GameServer class serves as the main module that runs the server. Incoming
@@ -308,13 +292,13 @@ public class GameServer {
         int count = ECC_UPDATE_CYCLE_DEFAULT;
         Properties prop = new Properties();
 	InputStream input = null;
-        String sep = System.getProperty("file.separator"); 
+        String sep = System.getProperty("file.separator");
         String filePath = "src" + sep + "conf" + sep + "simulation" + sep + "timer.properties";
         try {            
             input = new FileInputStream(filePath);
             // load a properties file
             prop.load(input);            
-            String cycle = prop.getProperty("cycle"); 
+            String cycle = prop.getProperty("cycle");
 
             // Value is in minutes
             System.out.println("eccUpdateCycle value read from timer.properties = " + cycle);            
