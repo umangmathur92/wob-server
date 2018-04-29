@@ -41,13 +41,13 @@ public class RequestUpdateCredits extends GameRequest
             {
                 if(GameResources.useCredits(client.getPlayer(), -credits))
                 {
-                    Log.println("RequestUpdateCredits processing, action =0: adding " + credits + " credits" );
-                    response.setStatus(0);
+                    Log.println("user "+ client.getPlayer().getName()+" is processing RequestUpdateCredits, action =0: adding " + credits + " credits" );
+                    response.setStatus((short)0);
                 }
                 else
                 {
-                    Log.println("RequestUpdateCredits processing, action =0: failed to add " + credits + " credits" );
-                    response.setStatus(1);
+                    Log.println("user "+ client.getPlayer().getName()+" is processing RequestUpdateCredits, action =0: failed to add " + credits + " credits" );
+                    response.setStatus((short)1);
                 }
 
             }
@@ -56,13 +56,13 @@ public class RequestUpdateCredits extends GameRequest
 
                 if(GameResources.useCredits(client.getPlayer(), credits))
                 {
-                    Log.println("RequestUpdateCredits processing, action =1: subtracting " + credits + " credits");
-                    response.setStatus(0);
+                    Log.println("user "+ client.getPlayer().getName()+" is processing RequestUpdateCredits, action =1: subtracting " + credits + " credits");
+                    response.setStatus((short)0);
                 }
                 else
                 {
-                    Log.println("RequestUpdateCredits processing, action =1: failed to subtract " + credits + " credits" );
-                    response.setStatus(1);
+                    Log.println("user "+ client.getPlayer().getName()+" is processing RequestUpdateCredits, action =1: failed to subtract " + credits + " credits" );
+                    response.setStatus((short)1);
                 }
 
             }

@@ -35,9 +35,9 @@ public class ResponseUpdateCredits extends GameResponse
         this.action = action;
     }
 
-    public void setStatus(int status)
+    public void setStatus(short status)
     {
-        this.status = (short) status;
+        this.status = status;
     }
 
     public void setCredits(int credits)

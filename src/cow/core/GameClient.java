@@ -294,8 +294,10 @@ public class GameClient {
                     GameResponse response = responses.get(0);
                     //System.out.println("Sending response:"+response.getID());
                     outputStream.write(response.getBytes());
+
+                    System.out.println("Player: "+this.player.getName()+", with response id: "+response.getID());
                     //output packet to screen for packet level debugging purposes
-                    //DebugPacket (response.getBytes(), response.getID(), true);
+                    DebugPacket (response.getBytes(), response.getID(), true);
                     responses.remove(0);
                 }
             } catch (IOException ex) {
