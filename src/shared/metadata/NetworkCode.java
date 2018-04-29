@@ -90,6 +90,8 @@ public class NetworkCode {
     public final static short PAIR = 159;
     public final static short QUIT_ROOM = 160;
     public final static short GET_ROOMS = 161;
+
+    public final static short UPDATE_CREDITS = 800;
     
     //Clash of Species
     public final static short CLASH_ENTRY = 162;
@@ -131,6 +133,8 @@ public class NetworkCode {
     public final static short MATCH_START = 212;
     public final static short RETURN_LOBBY = 213;
     public final static short APPLY_FOOD = 214;
+
+
 
   // Sea Divided
     public final static short SD_GAME_LOGIN = 400;

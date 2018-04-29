@@ -57,6 +57,9 @@ public class GameRequestTable {
 
         add(NetworkCode.UPDATE_TIME, RequestUpdateTime.class);
 
+
+        add(NetworkCode.UPDATE_CREDITS, RequestUpdateCredits.class);
+
         //MENU
         add(NetworkCode.STATUS, RequestStatus.class);
         
