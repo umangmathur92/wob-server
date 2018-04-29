@@ -40,7 +40,7 @@ public class ResponseUpdateCredits extends GameResponse
         this.status = status;
     }
 
-    public void setCredits(int newCredits)
+    public void setNewCredits(int newCredits)
     {
         this.newCredits = newCredits;
     }
