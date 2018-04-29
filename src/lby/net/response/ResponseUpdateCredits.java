@@ -9,7 +9,7 @@ public class ResponseUpdateCredits extends GameResponse
 {
     private short action;
     private short status;
-    private int credits;
+    private int newCredits;
 
 
     public ResponseUpdateCredits()
@@ -23,8 +23,8 @@ public class ResponseUpdateCredits extends GameResponse
         GamePacket packet = new GamePacket(response_id);
         packet.addShort16(action);
         packet.addShort16(status);
-        packet.addInt32(credits);
-        Log.println("ResponseUpdateCredits.getBytes: action= " + action + ", status= " + status + ", credits = " + credits);
+        packet.addInt32(newCredits);
+        Log.println("ResponseUpdateCredits.getBytes: action= " + action + ", status= " + status + ", newCredits = " + newCredits);
 
 
         return packet.getBytes();
@@ -40,8 +40,8 @@ public class ResponseUpdateCredits extends GameResponse
         this.status = status;
     }
 
-    public void setCredits(int credits)
+    public void setCredits(int newCredits)
     {
-        this.credits = credits;
+        this.newCredits = newCredits;
     }
 }

@@ -35,18 +35,20 @@ public class RequestUpdateCredits extends GameRequest
         {
             ResponseUpdateCredits response = new ResponseUpdateCredits();
             response.setAction(action);
-            response.setCredits(credits);
+
 
             if(action==0)//adding credits
             {
                 if(GameResources.useCredits(client.getPlayer(), -credits))
                 {
                     Log.println("user "+ client.getPlayer().getName()+" is processing RequestUpdateCredits, action =0: adding " + credits + " credits" );
+                    response.setCredits(client.getPlayer().getCredits()+credits);
                     response.setStatus((short)0);
                 }
                 else
                 {
                     Log.println("user "+ client.getPlayer().getName()+" is processing RequestUpdateCredits, action =0: failed to add " + credits + " credits" );
+                    response.setCredits(client.getPlayer().getCredits());
                     response.setStatus((short)1);
                 }
 
@@ -57,11 +59,13 @@ public class RequestUpdateCredits extends GameRequest
                 if(GameResources.useCredits(client.getPlayer(), credits))
                 {
                     Log.println("user "+ client.getPlayer().getName()+" is processing RequestUpdateCredits, action =1: subtracting " + credits + " credits");
+                    response.setCredits(client.getPlayer().getCredits()-credits);
                     response.setStatus((short)0);
                 }
                 else
                 {
                     Log.println("user "+ client.getPlayer().getName()+" is processing RequestUpdateCredits, action =1: failed to subtract " + credits + " credits" );
+                    response.setCredits(client.getPlayer().getCredits());
                     response.setStatus((short)1);
                 }
 
