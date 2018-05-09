@@ -7,6 +7,7 @@ import shared.model.Player;
 import lby.net.response.ResponseUpdateLevel;
 import lby.net.response.ResponseUpdateResources;
 import shared.util.ExpTable;
+import shared.util.Log;
 import shared.util.NetworkFunctions;
 
 public class GameResources {
@@ -17,6 +18,7 @@ public class GameResources {
     public static boolean useCredits(Player player, int amount) {
         if (amount <= player.getCredits()) {
             player.setCredits(player.getCredits() - amount);
+            Log.println("player credits after player.setCredits= "+player.getCredits());//debug
             GameResources.updateCredits(player, 0);
             return true;
         }

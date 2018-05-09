@@ -23,8 +23,8 @@ import shared.db.PlayerDAO;
 public class RequestMatchOver extends GameRequest {
 	private int playerID;
 	private int wonGame;
-	private int wonAmount = 100;
-	private int lossAmount = 25;
+	private int wonAmount = 0;
+	private int lossAmount = 0;
 	
 	@Override
     public void parse(DataInputStream dataInput) throws IOException {
@@ -54,14 +54,15 @@ public class RequestMatchOver extends GameRequest {
 //        WinsLosses wins = test.getPlayersWinsLosses(playerID);
 //        test.showWinsLosses(wins);
         
-        // Update player's win table and add credits 
+        // Update player's win table and add credits
+        //let's not add credits to the database here just yet -Jeremy
         if (wonGame == 1) {
         	CardWinsDAO.playerWon(playerID, true);
-            PlayerDAO.changeCredits(playerID, wonAmount);
+            //PlayerDAO.changeCredits(playerID, wonAmount);
             response.setCredits(wonAmount);
         } else {
         	CardWinsDAO.playerWon(playerID, false);
-            PlayerDAO.changeCredits(playerID, lossAmount);
+            //PlayerDAO.changeCredits(playerID, lossAmount);
             response.setCredits(lossAmount);
         }
 
